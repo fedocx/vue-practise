@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-model双向绑定</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="email" v-model="email">
+    <input type="name" v-model="name">
+    <input type="button" value="changedata" @click="modify">
+    <input type="button" value="show" @click="show">
+
+</div>
+
+
+</body>
+<script>
+const vm = new Vue({
+    el: "#app",
+    data: {
+        msg: "test",
+        email: "tiger",
+        name: "tes1111name "
+    },
+    methods: {
+        modify(){
+            this.email= "root@root.com",
+            this.name= "root"
+        },
+        show(){
+            console.log(this.email,this.name)
+        }
+    },
+})
+</script>
+</html>
